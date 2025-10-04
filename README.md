@@ -4,57 +4,48 @@
 ## 🎯 **Objectif du projet**
 
 
-Ce dashboard Power BI a été conçu pour offrir une vision claire et fiable du chiffre d’affaires réalisé, en intégrant les écritures comptables issues de Sage 100 et les factures de l’ERP Batigest.
-L’objectif : permettre à la Direction et à la DAF de piloter le CA en temps réel, tout en suivant les encours clients et les retards de paiement.
+Ce dashboard Power BI offre une vision fiable et à jour du chiffre d’affaires (N / N-1 / N-2), en consolidant les écritures comptables (Sage 100) et les factures de l’ERP (Batigest).
+Objectif : piloter la performance commerciale (mix FOURNI / FOURNI POSE, bureaux, clients) et suivre les encours (échu, réglé, en cours) sur année fiscale (avril → mars).
 
 
 
 ## 🧠 **Contexte métier**
 
 
-Avant ce projet, les équipes financières de l’entreprise devaient croiser manuellement les données issues de différents outils : Sage, Batigest et fichiers Excel.
-La consolidation des chiffres prenait plusieurs jours et ne permettait pas d’avoir une vision fiable en cours de mois.
-Le dashboard vise donc à :
-
-Centraliser les sources comptables et ERP
-
-Automatiser le calcul du CA et des encours
-
-Garantir la cohérence entre les systèmes financiers et commerciaux
+Avant ce projet, les équipes naviguaient entre Sage, Batigest et Excel pour reconstituer le CA : perte de temps, incohérences, peu de vision à date.
+Le dashboard apporte une source unique de vérité, automatise la consolidation et aligne DAF & Commerce sur les mêmes chiffres.
 
 
 
 ## 📊 **Fonctionnalités principales**
 
 
-CA réel calculé automatiquement à partir des écritures comptables (débits / crédits)
+- Courbe CA N / N-1 / N-2 (mensuel & YTD) + variations (€ / %)
 
-Consolidation Sage + Batigest via connecteurs ODBC et clés de correspondance
+- Mix d’activité : répartition FOURNI vs FOURNI POSE (global + évolution mensuelle)
 
-Suivi des encours clients (réglés, échus, en cours)
+- Bureaux / Représentants : % du CA, tendance par mois, comparatif
 
-Analyse temporelle par année fiscale, mois, trimestre, et commercial
+- Clients : top clients, évolution mensuelle, contribution au CA
 
-Identification des avoirs et régularisations
+- Encours clients : statut réglé / échu / en cours, jours de retard calculés
 
-DAX avancé pour le calcul des montants HT nets, cumuls et comparatifs N/N-1
-
-Visualisations dynamiques : barres empilées, cartes de KPI, filtres temporels et sectoriels
+- Filtres : année fiscale, mois, bureaux, clients, type de vente
 
 
 
 ## ⚙️ **Technologies utilisées**
 
 
-Power BI Desktop
+- Power BI Desktop
 
-Power Query (ETL, nettoyage et modélisation)
+- Power Query (ETL, nettoyage et modélisation)
 
-DAX (calculs de CA, avoirs, retards, cumuls)
+- DAX (calculs de CA, avoirs, retards, cumuls)
 
-ODBC Sage 100 (intégration comptable automatisée)
+- ODBC Sage 100 (intégration comptable automatisée)
 
-Excel (fichiers auxiliaires, correspondances comptes et clients)
+- Excel (fichiers auxiliaires, correspondances comptes et clients)
 
 
 
@@ -63,15 +54,25 @@ Excel (fichiers auxiliaires, correspondances comptes et clients)
 
 Modèle en étoile :
 
-Table de faits FACT_F_ECRITUREC
+- FACT_CA (écritures + factures consolidées, avoirs nettes)
 
-Dimensions DIM_DATE, DIM_COMPTE_CLIENT, DIM_COMPTE_FOURNISSEUR
+- DIM_DATE (fiscal : avril → mars, Y, Q, M, YTD)
 
-Jointures croisées entre Sage et Batigest pour associer les factures aux écritures
+- DIM_CLIENT, DIM_BUREAUX (dérivé des représentants)
 
-Calculs DAX pour les agrégations dynamiques et les écarts temporels
+- DIM_TYPE_FACTURE (FOURNI / FOURNI POSE) & DIM_COMPTE_PRODUIT
 
-Catégorisation automatique des comptes produits (Atelier, Négoce, Pose, etc.)
+Règles métiers :
+
+- Normalisation débit/crédit → montant HT net (avoirs négatifs)
+
+- Mapping Grp1 → FOURNI / FOURNI POSE
+
+- Attribution Bureaux depuis CodeRepre
+
+- Jointure Sage ↔ Batigest par numéro de facture
+
+- Encours & retards calculés depuis dates d’échéance (conditions de règlement)
 
 
 
