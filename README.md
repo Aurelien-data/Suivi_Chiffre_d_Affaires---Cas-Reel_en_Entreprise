@@ -1,6 +1,6 @@
 # 💰 Suivi du Chiffre d’Affaires (CA) – Cas réel en PME industrielle
 
-## 🎯 **Objectif du projet**
+## 🎯 Objectif du projet
 
 
 Ce dashboard Power BI offre une vision fiable et à jour du chiffre d’affaires (N / N-1 / N-2), en consolidant les écritures comptables (Sage 100) et les factures de l’ERP (Batigest).
