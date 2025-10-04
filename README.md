@@ -8,6 +8,7 @@ Ce dashboard Power BI a été conçu pour offrir une vision claire et fiable du 
 L’objectif : permettre à la Direction et à la DAF de piloter le CA en temps réel, tout en suivant les encours clients et les retards de paiement.
 
 
+
 ## 🧠 **Contexte métier**
 
 
@@ -20,6 +21,7 @@ Centraliser les sources comptables et ERP
 Automatiser le calcul du CA et des encours
 
 Garantir la cohérence entre les systèmes financiers et commerciaux
+
 
 
 ## 📊 **Fonctionnalités principales**
@@ -40,6 +42,7 @@ DAX avancé pour le calcul des montants HT nets, cumuls et comparatifs N/N-1
 Visualisations dynamiques : barres empilées, cartes de KPI, filtres temporels et sectoriels
 
 
+
 ## ⚙️ **Technologies utilisées**
 
 
@@ -52,6 +55,7 @@ DAX (calculs de CA, avoirs, retards, cumuls)
 ODBC Sage 100 (intégration comptable automatisée)
 
 Excel (fichiers auxiliaires, correspondances comptes et clients)
+
 
 
 ## 🧩 **Structure technique**
@@ -70,6 +74,7 @@ Calculs DAX pour les agrégations dynamiques et les écarts temporels
 Catégorisation automatique des comptes produits (Atelier, Négoce, Pose, etc.)
 
 
+
 ## 🚀 **Résultats & impacts**
 
 
@@ -84,11 +89,13 @@ Catégorisation automatique des comptes produits (Atelier, Négoce, Pose, etc.)
 🧭 Indicateur central pour le pilotage global de l’activité
 
 
+
 ## 📁 **Confidentialité**
 
 
 Les données utilisées sont issues du système d’information interne et ne peuvent être diffusées publiquement (RGPD & confidentialité entreprise).
 Ce projet illustre néanmoins un cas concret d’intégration comptable et analytique en PME industrielle.
+
 
 
 ## ✅ **En résumé**
