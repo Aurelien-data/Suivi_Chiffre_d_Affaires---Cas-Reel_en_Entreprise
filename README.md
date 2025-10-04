@@ -3,12 +3,14 @@
 
 ## 🎯 **Objectif du projet**
 
+
 Ce dashboard Power BI a été conçu pour offrir une vision claire et fiable du chiffre d’affaires réalisé, en intégrant les écritures comptables issues de Sage 100 et les factures de l’ERP Batigest.
 L’objectif : permettre à la Direction et à la DAF de piloter le CA en temps réel, tout en suivant les encours clients et les retards de paiement.
 
 ---
 
 ## 🧠 **Contexte métier**
+
 
 Avant ce projet, les équipes financières de l’entreprise devaient croiser manuellement les données issues de différents outils : Sage, Batigest et fichiers Excel.
 La consolidation des chiffres prenait plusieurs jours et ne permettait pas d’avoir une vision fiable en cours de mois.
@@ -23,6 +25,7 @@ Garantir la cohérence entre les systèmes financiers et commerciaux
 ---
 
 ## 📊 **Fonctionnalités principales**
+
 
 CA réel calculé automatiquement à partir des écritures comptables (débits / crédits)
 
@@ -42,6 +45,7 @@ Visualisations dynamiques : barres empilées, cartes de KPI, filtres temporels e
 
 ## ⚙️ **Technologies utilisées**
 
+
 Power BI Desktop
 
 Power Query (ETL, nettoyage et modélisation)
@@ -55,6 +59,7 @@ Excel (fichiers auxiliaires, correspondances comptes et clients)
 ---
 
 ## 🧩 **Structure technique**
+
 
 Modèle en étoile :
 
@@ -72,6 +77,7 @@ Catégorisation automatique des comptes produits (Atelier, Négoce, Pose, etc.)
 
 ## 🚀 **Résultats & impacts**
 
+
 📈 Vision quotidienne du CA consolidé, sans retraitement manuel
 
 ⏳ Gain de temps pour la DAF sur les clôtures mensuelles
@@ -86,12 +92,14 @@ Catégorisation automatique des comptes produits (Atelier, Négoce, Pose, etc.)
 
 ## 📁 **Confidentialité**
 
+
 Les données utilisées sont issues du système d’information interne et ne peuvent être diffusées publiquement (RGPD & confidentialité entreprise).
 Ce projet illustre néanmoins un cas concret d’intégration comptable et analytique en PME industrielle.
 
 ---
 
 ## ✅ **En résumé**
+
 
 Un projet complet combinant :
 
