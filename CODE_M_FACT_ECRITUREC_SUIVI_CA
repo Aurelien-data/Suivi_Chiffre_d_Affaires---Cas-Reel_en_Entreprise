@@ -1,7 +1,7 @@
 let
-    Source = Odbc.DataSource("dsn=SAGE_COMPTA", [HierarchicalNavigation=true]),
-    ERVENT_Database = Source{[Name="ERVENT",Kind="Database"]}[Data],
-    dbo_Schema = ERVENT_Database{[Name="dbo",Kind="Schema"]}[Data],
+    Source = SOURCE,
+    Database = Source{XXX}[Data],
+    dbo_Schema = Database{[Name="dbo",Kind="Schema"]}[Data],
     F_ECRITUREC_Table = dbo_Schema{[Name="F_ECRITUREC",Kind="Table"]}[Data],
     #"Autres colonnes supprimées" = Table.SelectColumns(F_ECRITUREC_Table,{"JO_Num", "EC_No", "JM_Date", "EC_Date", "EC_RefPiece", "CG_Num", "CT_Num", "EC_Intitule", "EC_Echeance", "EC_Montant", "EC_Lettrage", "EC_DateRegle","EC_Sens"}),
     #"Type modifié" = Table.TransformColumnTypes(#"Autres colonnes supprimées",{{"JM_Date", type date}, {"EC_Date", type date}, {"EC_Echeance", type date}, {"EC_DateRegle", type date}, {"EC_Sens", Int64.Type}}),
@@ -56,7 +56,7 @@ type text
     type text
 ),
     #"Requêtes fusionnées" = Table.NestedJoin(#"Colonne Description Journal", {"Numero_Compte_Comptable"}, PCG_ERVENT, {"Numero_Compte"}, "PCG_ERVENT", JoinKind.LeftOuter),
-    #"PCG_ERVENT développé" = Table.ExpandTableColumn(#"Requêtes fusionnées", "PCG_ERVENT", {"Intitule_Compte", "Nature_Compte"}, {"Intitule_Compte", "Nature_Compte"}),
+    #"PCG développé" = Table.ExpandTableColumn(#"Requêtes fusionnées", "PCG", {"Intitule_Compte", "Nature_Compte"}, {"Intitule_Compte", "Nature_Compte"}),
     #"Texte en majuscules" = Table.TransformColumns(#"PCG_ERVENT développé",{{"Nature_Compte", Text.Upper, type text}, {"Debit_Credit", Text.Upper, type text}}),
     #"Colonne Montant Facture" = Table.AddColumn(#"Texte en majuscules", "Montant_Facture", each 
 if [Debit_Credit] = "DÉBIT" then [EC_Montant] *(-1)
