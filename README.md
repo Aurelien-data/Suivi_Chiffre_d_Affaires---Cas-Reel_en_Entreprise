@@ -29,6 +29,8 @@ Le dashboard apporte une source unique de vérité, automatise la consolidation 
 
 - Encours clients : statut réglé / échu / en cours, jours de retard calculés
 
+- DSO : calcul du DSO par clients / nb de factures réglées / délai min & max / nb factures non réglées
+
 - Filtres : année fiscale, mois, bureaux, clients, type de vente
 
 
